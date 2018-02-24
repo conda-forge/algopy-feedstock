@@ -1,5 +1,5 @@
 {% set name = "algopy" %}
-{% set version = "0.5.5" %}
+{% set version = "0.5.7" %}
 {% set hash_type = "sha256" %}
 {% set hash_value = "ecaa03fcdd63838d16e32940cf4641d46968aa7fda237e6abf674aed68249034" %}
 
