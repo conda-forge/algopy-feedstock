@@ -41,6 +41,7 @@ about:
   home: http://packages.python.org/algopy
   license: BSD
   license_family: BSD
+  license_file: README.rst
   summary: 'ALGOPY: Taylor Arithmetic Computation and Algorithmic Differentiation'
   description: |
     ALGOPY is a tool for Algorithmic Differentiation (AD) and Taylor polynomial
