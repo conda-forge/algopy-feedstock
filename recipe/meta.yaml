@@ -1,7 +1,5 @@
 {% set name = "algopy" %}
-{% set version = "0.5.7" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "6955f676fce3858fa3585cb7f3f7e1796cb93377d24016419b6699291584b7df" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -9,20 +7,21 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.zip
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip
-  {{ hash_type }}: {{ hash_value }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 24b89938605d063240196f9d0da4f3e87ec7fc68a3f1f655c862178be52b59c3
 
 build:
   number: 0
   noarch: python
-  script: python setup.py install
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
-    - python
+  host:
+    - python >=3.6
+    - pip
   run:
-    - python
-    - numpy
+    - python >=3.6
+    - numpy <2
     - scipy
 
 test:
@@ -43,6 +42,7 @@ about:
   home: http://packages.python.org/algopy
   license: BSD
   license_family: BSD
+  license_file: README.rst
   summary: 'ALGOPY: Taylor Arithmetic Computation and Algorithmic Differentiation'
   description: |
     ALGOPY is a tool for Algorithmic Differentiation (AD) and Taylor polynomial
