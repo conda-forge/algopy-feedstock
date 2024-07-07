@@ -1,5 +1,5 @@
 {% set name = "algopy" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.zip
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 24b89938605d063240196f9d0da4f3e87ec7fc68a3f1f655c862178be52b59c3
+  sha256: 4a82ba3d44964430733c5c44c498779ac84879cabf70b31136d550b5e6252d51
 
 build:
   number: 0
