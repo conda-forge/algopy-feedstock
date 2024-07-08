@@ -13,16 +13,17 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.9
     - pip
   run:
-    - python >=3.6
-    - numpy <2
-    - scipy
+    - python >=3.9
+    - numpy >=2.0.0
+    - scipy >=1.14.0
+    - pytest >=8.2.2
 
 test:
   imports:
@@ -37,6 +38,10 @@ test:
     - algopy.tracer.tests.test_output
     - algopy.utpm
     - algopy.utpm.tests
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://packages.python.org/algopy
